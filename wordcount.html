@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="count.css">
+    <div class="wrapperDiv"></div>
+
+
+    </head>
+
+<body>
+    <div class="headline1">
+    <h1 id="head1" style="text-align: center" style="font-family:Brush Script MT">Word Count</h1>
+    </div>
+    <div class="body">
+    <script>
+            function lengthcheck()
+            {
+             var check12 = document.getElementsByName('inputText')[0].value;
+            
+             if(document.getElementsByName('checkbox1')[0].checked != true)
+             {
+              check12 = check12.replace(/\s/g,"");
+             }
+             document.getElementsByName('checkresult')[0].innerHTML = check12.length + "글자 입니다.";
+            
+             return;
+            }
+           </script>
+            
+            
+            
+           <!-- form영역-->
+           <form align="center"  onsubmit="return false;">
+            <textarea oninput="lengthcheck();" style="width:600px; height:200px;" align="center" placeholder="글자 수를 확인하고 싶으신 문장을 적어주세요. 자동으로 글자수가 체크 됩니다." name="inputText" type="text"></textarea>
+            <br>
+            공백 포함 : <input name="checkbox1" onclick="lengthcheck();" type="checkbox" checked>
+            
+            <p name="checkresult">0글자 입니다.</p>
+           </form>
+
+</p>
+</div>
+
+</body>
